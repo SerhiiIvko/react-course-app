@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import populateMovies from './Movie';
 import MovieActive from './MovieActive';
+import moviesReducer from './Reducers';
 
 const allReducers = combineReducers ({
-    movies: populateMovies,
+    movies: moviesReducer,
     active: MovieActive
 });
 

@@ -1,3 +1,9 @@
+export const fetchMoviesAction = (movies) => {
+return{
+    type: "FETCH_MOVIES",
+    payload: movies
+    }
+};
 
 export const select = (movie) => {
     return{
@@ -5,3 +11,10 @@ export const select = (movie) => {
         payload: movie
     }
 };
+
+export const fetchMovieGenres = (genres) => {
+    return{
+        type: "FETCH_GENRES",
+        payload: genres
+        }
+    };
