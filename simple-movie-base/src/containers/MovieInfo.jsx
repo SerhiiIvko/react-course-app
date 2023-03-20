@@ -20,7 +20,7 @@ const MovieInfo = ({ match }) => {
     }
   });
 
-  const genre2 = genresArr.slice(0, 2);
+  const genre2 = genresArr.slice(0, 4);
 
   return (
     <div className="w-full bg-black">

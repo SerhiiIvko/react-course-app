@@ -10,6 +10,10 @@ function Search({ movies }) {
       </div>
     );
   }
-  return (<div><h1>No such movies. Try a different search or clear the search field.</h1></div>);
+  return (
+    <div>
+      <h1>No such movies. Try a different search or clear the search field.</h1>
+    </div>
+  );
 }
 export default Search;

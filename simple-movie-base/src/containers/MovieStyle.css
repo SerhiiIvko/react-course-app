@@ -44,7 +44,6 @@
   
   .overlay {
     position: absolute;
-    background: rgba(0, 0, 0, 0.8);
     width: 100%;
     transition: 0.5s ease;
     opacity: 0;
@@ -55,9 +54,18 @@
   }
 
   .img {
-    width: 100%;
-    height: 100%;
     height: 20vh;
     object-fit: cover;
     margin-bottom: 1rem;
   }
+
+.details-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+}
+    
+.div-img { grid-area: 1 / 1 / 2 / 2; }
+
+.div-rating { grid-area: 1 / 2 / 2 / 3; }

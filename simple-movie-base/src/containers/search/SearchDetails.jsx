@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Search from './Search';
 import Scroll from './Scroll';
+import { useSelector } from 'react-redux';
 
-function SearchDetails({ details }) {
+function SearchDetails(props) {
   const [searchField, setSearchField] = useState('');
   const [searchShow, setSearchShow] = useState(false);
   const [movies, setMovies] = useState([]);
+  const details = useSelector((state) => state.movies.movies);
   useEffect(() => {
     const filteredMovies = details.filter(
       (movie) => (
@@ -30,7 +32,7 @@ function SearchDetails({ details }) {
     if (searchShow) {
       return (
         <Scroll>
-          <Search result={movies} />
+          <Search movies={movies} />
         </Scroll>
       );
     }
@@ -41,7 +43,6 @@ function SearchDetails({ details }) {
     <section className="garamond">
       <div className="pa2">
         <input
-          className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
           type="search"
           placeholder="Search here"
           onChange={handleChange}

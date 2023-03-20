@@ -7,7 +7,7 @@ function Header() {
       <div className="container">
         <div className="inner-content">
           <div className="brand">
-            <h3>Header Movies</h3>
+            <h2>Movies</h2>
           </div>
         </div>
       </div>

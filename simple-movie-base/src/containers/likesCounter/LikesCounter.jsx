@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Like.css';
 
 function LikesCounter() {
   const [count, setCount] = useState(0);
@@ -10,11 +11,13 @@ function LikesCounter() {
   const countDecrement = () => {
     setCount((prevState) => prevState - 1);
   };
-
+  if(count < 0) {
+    setCount(0);
+  } 
   return (
     <div className="like">
       <button
-        type="button"
+        type="button-like"
         onClick={countIncrement}
       >
         👍
@@ -23,7 +26,7 @@ function LikesCounter() {
       {count}
       <p />
       <button
-        type="button"
+        type="button-like"
         onClick={countDecrement}
       >
         👎

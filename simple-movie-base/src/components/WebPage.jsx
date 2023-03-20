@@ -8,30 +8,24 @@ import SearchDetails from '../containers/search/SearchDetails';
 import Filter from "../containers/filter/Filter";
 import '../containers/Movielist.css'
 
-const WepPage = () => (
+const WepPage = (props) => (
     <div>
-
-    <Header />
-    <div className="parent">
-        <div className="filters">
-             <Filter />
-            {/* <SearchDetails /> */}
-        </div>   
-        <div className="div1">
-            <div className="popular-movies">
-                <MovieList />
-            </div>              
+        <div className="parent">
+            <div className="div1">
+                <div>
+                    <div className="filters">
+                        <Filter />
+                        <SearchDetails details={props.movies}/>
+                    </div>
+                </div>
+                <div className="popular-movies">
+                    <MovieList />
+                </div>              
+            </div>
+            <div className="div2">
+                <Details />
+            </div>
         </div>
-        <div className="div2">
-            <h4>Info:</h4>
-            <Details />
-        </div>
-        
-    </div>
-    <div className="container">
-        <Footer />
-    </div>
-    
     </div>
 );
 

@@ -1,0 +1,33 @@
+.auth-form-container, .register-form {
+    text-align: center;
+}
+
+.login-form {
+    display: inline-block;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+  label {
+    text-align: center;
+    padding: 0.25rem 0;
+  }
+  
+  input {
+    text-align: center;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+
+  }
+  
+  .button {
+    background-color: rgb(103, 103, 103);
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+  }

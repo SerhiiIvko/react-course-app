@@ -5,6 +5,7 @@ import { fetchMovieGenres } from '../actions/Actions';
 import GenresApi from '../api/GenresApi';
 import LikesCounter from './likesCounter/LikesCounter';
 import BasicRating from './basicRating/BasicRating';
+import { NavLink } from 'react-router-dom';
 // import '../App.css';
 import './MovieStyle.css';
 
@@ -26,7 +27,7 @@ function Details(props) {
         fetchGenre(movieId).then(movie => {
             movie.genres.forEach(genre => {
                 setGenre([genre.name])
-                console.log(genre)
+                // console.log(genre)
             })
         });
 
@@ -56,23 +57,43 @@ function Details(props) {
         // });
         
     return (
-        <div className="container">
         <div>
-            <img className="img"
-            src={`${IMG_URL}${movie.backdrop_path}`}
-            alt={movie.path}
-            />
-            <BasicRating />
-      <div className="wrapperLike">
-        <LikesCounter />
-      </div>
-            <h4>{movie.title}</h4>
-            <h4>{movie.id}</h4>
-            <p>Director: </p>
-            <p>Actors: </p>
-            <p>Genres: {genr}</p>
-            <p>Description: {movie.overview}</p>
-        </div>
+            <div>
+                <div className="details-block">
+                    <div className="div-img">
+                        <img
+                        src={`${IMG_URL}${movie.backdrop_path}`}
+                        alt={movie.path}
+                    />
+                    </div>
+                    <div className="div-rating">
+                        <h4>{movie.title}</h4>
+                        <BasicRating />
+                        <div className="wrapperLike">
+                            <LikesCounter /><p> people likes this movie</p>
+                        </div>
+                    <div>
+                        <button 
+                            type="submit" 
+                            className="button" 
+                            onClick={<NavLink to="/movie-edit"></NavLink>}>
+                            Edit movie
+                        </button>
+                        <br/>
+                        <button 
+                            type="submit" 
+                            className="alert-button" 
+                            onClick={<NavLink to="/movies"></NavLink>}>
+                            Delete movie
+                        </button>
+                    </div>
+                </div>                
+                </div>                
+                <p>Director: </p>
+                <p>Actors: </p>
+                <p>Genres: {genr}</p>
+                <p>Description: {movie.overview}</p>
+            </div>
         </div>
         );
     }

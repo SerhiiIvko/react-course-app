@@ -1,8 +1,8 @@
 .like {
     display: inline-block;
   }
-  
-  .active {
-    border: 1px solid blue;
-    background-color: cornsilk;
+
+  .button-like {
+    cursor: pointer;
+    color: #ffffff;
   }
